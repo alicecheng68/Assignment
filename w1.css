@@ -18,17 +18,18 @@
     width: 1200px;
     justify-content: center;
     margin: auto;
+    flex-wrap: wrap;
     
 }
-.bodylist{
-    width:33% ;
+.bodylist {
+    flex:1 ;
     height: 50px;
     margin:10px;
     background-color: rgb(243, 245, 220);
 }
 
 .bodylist2{
-    width:33% ;
+    flex:1 ;
     height: 50px;
     margin:10px;
     background-color: rgb(243, 245, 220);
@@ -57,51 +58,63 @@
 .smallimgsize{
     width: 100%;
     height:135px;
+    object-fit: cover;
+    
 }
 
 img {
     display: block ;
-    width: 100%;
-    height: auto;
+    
   }
 
 .redimg{
-    background-color: rgb(252, 94, 91)
-}
-
-.yellowimg{
-    background-color: rgb(249, 241, 103)
-}
-
-.blueimg{
-    background-color: aquamarine;
-}
- 
-@media(max-width:1200px){
-    .bigbox{
-        width: 90%;
-        flex-wrap: wrap;
-
-    }
-    .sidebyside{
-        flex-wrap: wrap;
-        width: 90%;
-        align-content: center;
-    }
-    .bodylist{
-        width:50% ;
-    }
-    .bodylist2{
-        width: 100% ;
-    }
-
-    .smallimgbox{
-        width: 25%
-    }
+    background-color: rgb(252, 94, 91);
     
 }
 
-@media(max-width:600px){
+.yellowimg{
+    background-color: rgb(249, 241, 103);
+}
 
+.blueimg{
+    background-color: aquamarine;;
+    
+}
+ 
+@media(max-width:1200px){
+    
+    .bigbox{
+        width: 90%;
+        margin: 0 auto;
+             }
+    .sidebyside{
+        flex-wrap: wrap;
+        justify-content:center ;
+        }
+    
+    
+    .bodylist2{
+        flex:100%;
+       
+    }
+    .mediumbox{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .smallimgbox{
+        flex:22.5%;
+    }
+}
+    
+
+
+@media(max-width:600px){
+    .bodylist{
+        flex:100%
+    }
+.smallimgbox{
+    flex:100%
+}
 }
 
