@@ -1,7 +1,17 @@
+nav > ul {
+    list-style: none;   /* 移除項目符號 */
+}
+.titlebar{
+    display: flex;
+    margin: 0px;
+    position: absolute;
+    right: 0px;
+}
 .weblist{
     position: absolute;
     right: 0px;
     display: block;
+    margin-top: 5px;
 }
 
 .phoneicon{
@@ -16,14 +26,14 @@
     
 }
 
-
 .headline{
     font-size: 200%;
     height:250px; 
     align-items: center;
     text-align: center;
     line-height: 250px; 
-    background-color:rgb(212, 242, 239)
+    background-color:rgb(212, 242, 239);
+    margin-top:5px
 }
 
 .bigbox{
@@ -123,11 +133,14 @@ img {
         justify-content: center;
         flex-wrap: wrap;
         gap:20px
+            }
+    .meiumdevice{
+        
     }
-
     .smallimgbox{
         margin: 0px;
         flex:21%
+      
     }
 
 }
