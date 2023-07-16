@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <title>Assignment Week2</title>
+</html>
+<body>
+<script>
+function getNumber(index) {
+  let n = [0];
+  for (let i = 1; i <= index; i++) {
+    if (i % 2 === 1) {
+      n.push(n[i - 1] + 4); 
+    } else {
+      n.push(n[i - 1] - 1); 
+      
+    }
+  }
+  let result = n[n.length - 1];
+  console.log(result);
+  return result;
+}
+
+getNumber(1);   // 输出：4
+getNumber(5);   // 输出：10
+getNumber(10);  // 输出：15
+
+</script>
+</body>

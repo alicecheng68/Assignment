@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <title>Assignment Week2</title>
+</html>
+<body>
+<script>
+function calculateSumOfBonus(data) {
+  const exchangeRate = 30;
+  const employees = data.employees;
+
+  let totalBase = 0;
+  let totalBonus = 0;
+  let sumTotalBonus = 0;
+
+  for (let person of employees) {
+    let name = person.name;
+    let salary = person.salary;
+    let performance = person.performance;
+    let role = person.role;
+
+    if (salary.includes("USD")) {
+      salary = parseFloat(salary.replace("USD", "").trim()) * exchangeRate;
+    } else {
+      salary = parseFloat(salary.replace(",", ""));
+    }
+
+    let salaryBase = salary >= 100000 ? 0.13 : 0.12;
+
+    let performanceBase;
+    if (performance === "above average") {
+      performanceBase = 0.12;
+    } else if (performance === "average") {
+      performanceBase = 0.09;
+    } else {
+      performanceBase = 0.09;
+    }
+
+    let roleBase = role === "CEO" ? 0.05 : 0.11;
+
+    let base = salaryBase + performanceBase + roleBase;
+    totalBase += base;
+  }
+
+  for (let person of employees) {
+    let name = person.name;
+    let salary = person.salary;
+    let performance = person.performance;
+    let role = person.role;
+
+    if (salary.includes("USD")) {
+      salary = parseFloat(salary.replace("USD", "").trim()) * exchangeRate;
+    } else {
+      salary = parseFloat(salary.replace(",", ""));
+    }
+
+    let salaryBase;
+    if (salary >= 100000) {
+      salaryBase = 0.13
+    } else {salaryBase = 0.12}
+
+    let performanceBase;
+    if (performance === "above average") {
+      performanceBase = 0.12;
+    } else if (performance === "average") {
+      performanceBase = 0.09;
+    } else {
+      performanceBase = 0.09;
+    }
+
+    let roleBase;
+    if (role === "CEO") {
+      roleBase = 0.05
+    }else{
+      roleBase=0.11
+    } 
+
+    let base = salaryBase + performanceBase + roleBase;
+    let bonus = (8000 * base) / totalBase;
+    sumTotalBonus += bonus;
+
+    console.log(`${name}: ${Math.floor(bonus)}`);
+  }
+  console.log(`Total Bonus: ${Math.floor(sumTotalBonus)}`);
+}
+
+calculateSumOfBonus({ 
+  "employees": [
+    {
+      "name": "John",
+      "salary": "1000USD", 
+      "performance": "above average", 
+      "role": "Engineer"
+    },
+    {
+      "name": "Bob", 
+      "salary": "60000", 
+      "performance": "average", 
+      "role": "CEO"
+    },
+    {
+      "name": "Jenny", 
+      "salary": "50,000", 
+      "performance": "below average", 
+      "role": "Sales"
+    } 
+  ]
+});
+
+</script>
+</body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="utf-8"/>
+    <title>Assignment Week2</title>
+</html>
+<body>
+<script>
+function findAndPrint(messages) {
+    let eighteen = [];
+    
+    for (let person in messages) {
+      let message = messages[person];
+      
+     
+      if (message.includes("18 years old") ||
+       message.includes("legal age") || 
+       message.includes("vote")) {
+        eighteen.push(person);
+      }
+    }
+    
+   
+    eighteen.forEach(adult => {
+      console.log(adult);
+    });
+  }
+  
+  findAndPrint({
+    "Bob": "My name is Bob. I'm 18 years old.",
+    "Mary": "Hello, glad to meet you.",
+    "Copper": "I'm a college student. Nice to meet you.",
+    "Leslie": "I am of legal age in Taiwan.",
+    "Vivian": "I will vote for Donald Trump next week",
+    "Jenny": "Good morning."
+  });
+</script>
+</body>
