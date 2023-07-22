@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width", initial-scale="1.0"/>
+  <meta charset="utf-8"/>
+  <title>Assignment-1</title>
+  <link rel="stylesheet" type="text/css" href="w1.css">     
+</head>
+<body style="font-size:20px; margin: 0px;">
+            
+    <div style="display: flex;margin: 10 10 0px;">
+        <div style="float: left;margin: 5px;">色卡</div>
+        <div class="weblist"  >
+            <div >設計１</div>
+            <div >設計２</div>
+            <div >設計３</div>
+            <div >設計４</div>
+        </div> 
+        <div class="phoneicon"> 
+            <img src="icon.png" style="height: 28px;">
+        </div>
+    </div>
+
+  <div class="headline">Amazing Taipei!!</div>
+  
+    <div class="bigbox">
+      <div class="sidebyside"  >
+        
+        <div id="Cards">
+          
+          <span style="padding: 5px;">紅色系</span></div>
+      
+      <div class=" bodylist">
+              <img src="yellow.jpg" class="imgdiv">
+              <span style="padding: 5px;">黃色系</span></div>
+     
+      <div class=" bodylist2">
+          <img src="blue.jpg" class="imgdiv">
+          <span style="padding: 5px;">藍色系</span></div>
+      </div>
+
+  <script>
+    // 使用 Fetch API 從 JSON 資料源中獲取台北市的觀光景點資訊
+    fetch('https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json')
+      .then(response => response.json())
+      .then(data => {
+        const SpotsData = data.result.results;
+        const SpotsDetail = document.getElementById('Cards');
+
+        let counter = 1; 
+
+        // 用 forEach 建立動態元素的景點迴圈並添加到 DOM 中
+        SpotsData.forEach(Data => {
+          const { stitle, file } = Data;
+
+          const Cards = document.createElement('div');
+          Cards.classList.add('Spotscards');
+
+          const title = document.createElement('div');
+          const titleId = `title-${counter}`; // 建立ID給每個標題
+          title.textContent = stitle;
+          title.id = titleId;
+
+          const imageUrls = file.split('https://');
+          const firstImageUrl = 'https://' + imageUrls[1];
+
+          const image = document.createElement('img');
+          image.classList.add("imgdiv")
+          const imageId = `image-${counter}`; // 建立ID給每張圖片
+          image.src = firstImageUrl;
+          image.style.width = "300px"; // 暫時設定圖片寬度
+          image.style.height = "300px"; // 暫時設定圖片高度
+          image.id = imageId;
+
+          Cards.appendChild(image);
+          Cards.appendChild(title);
+
+          SpotsDetail.appendChild(Cards);
+
+          counter++; 
+        });
+      })
+      .catch(error => console.error('Error fetching data:', error));
+  </script>
+</body>
+</html>
