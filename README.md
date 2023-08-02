@@ -12,6 +12,7 @@ mysql>INSERT INTO member (id, name, username, password, follower_count, time)
 -> (6,"Katy","katy","testkaty",666,"2023-07-28 13:20:20"),
 -> (8,"Daniel","daniel","testdaniel",789,now());
 
+<img scr="Task3-1&2.png">
 
 ![截圖 2023-08-01 下午10.12.43.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f2d40e27-1c25-46eb-95b0-45daca859dc6/%E6%88%AA%E5%9C%96_2023-08-01_%E4%B8%8B%E5%8D%8810.12.43.png)
 
