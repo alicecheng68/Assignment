@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Vip會員</title>
+        <link rel="stylesheet" type="text/css" href="W6.css">
+        
+    </head>
+    <body >
+        <div class="container">
+        <div class="topic">歡迎光臨<div>請註冊登入系統</div></div>
+        <div class="formTopic">註冊帳號</div>
+                <form name="signupForm" action="/signup" method="POST" onsubmit="return signup()">
+                <div>姓名 <input type="text" name="name" id="name" /></div>
+                <div>帳號 <input type="text" name="username"  id="username" /></div>
+                <div>密碼 <input type="password" name="password" id="password"/></div>
+                <button type="submit" >註冊</button>
+                </form>
+        </from>
+        
+        <div class="formTopic">登入系統</div>
+                <form name="signinForm" action="/signin" method="POST" onsubmit="return login();">
+                <div>帳號 <input type="text" name="Username" id="username" /></div>
+                <div>密碼 <input type="password" name="Password" id="password" /></div>
+                <div>同意條款<input type="checkbox" id="agree" name="Agree"  /></div>
+                <button type="submit" >登入</button>
+                </form>
+        </from>
+        </div>
+    <script src="W6.js"></script>
+   
+    </body>
+   
+</html>
