@@ -47,7 +47,7 @@ def signup_page():
         cursor.execute('Insert into member (name, username, password) VALUES (%s, %s, %s)', (name, username, password))
         con.commit()   #確定執行（新增資料到資料庫）
         return render_template("home.html")
-    con.close()
+    
 
 @app.route('/signin', methods=['POST'])   # 用 POST 方法執行 Html 裡 action 的 signin
 def signin():
@@ -68,7 +68,7 @@ def signin():
         return redirect('/error?message=請輸入帳號和密碼') 
     else:
         return redirect('/error?message=帳號密碼輸入錯誤')
-    con.close()
+    
 
 @app.route("/member")
 def member_page():
@@ -79,7 +79,7 @@ def member_page():
         return render_template('member.html',allMessage=allmessage)
     else:
         return redirect("/signout")
-    con.close()
+    
 
 @app.route("/createMessage", methods=['POST'])
 def create_message():
@@ -91,7 +91,7 @@ def create_message():
         return redirect('/member')
     else:
         return redirect("/signout")
-    con.close()
+    
 
 
 @app.route("/error")
@@ -107,6 +107,7 @@ def error_page():
 def signout_page():
     session["signIn"] = False   # 如果金鑰為 False，登出跳轉至首頁
     session.clear()  #清空session所有資料
+    con.close()  #關閉資料庫
     return redirect("/")
 
 
