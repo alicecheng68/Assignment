@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    margin: 0;
+    
+    
+}
+.topic{
+    padding:10px;
+    background-color:rgba(231, 139, 26, 0.727);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: larger ;
+    font-weight: bold;
+}
+.container {
+    background-color: bisque;
+    width: 300px;
+    height: fit-content;
+    padding: 10px;
+    margin:10px;
+    border-radius: 10px;
+    
+}
+
+.formTopic{
+    font-size: large;
+    font-weight: bold;
+}
+
+form {
+    margin: 10px 0 10px 0; 
+}
+
+button{
+    margin: 10px 0 10px 0;
+}
+
+.message{
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: medium;
+    margin: 5px;
+}
+
+.allmessages{
+    color:rgb(73, 73, 73)
+}
