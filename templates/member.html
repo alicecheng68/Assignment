@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta charset="utf-8">
+        <title>Vip會員</title>
+        <link rel="stylesheet" type="text/css" href="W7.css">
+        
+    </head>
+    <body>
+        <div class="container">
+            <div class="topic">歡迎光臨，這是會員頁</div>
+                <form action="/member">
+                    <div> {{ session ["Name"] }} 恭喜你，成功登入系統</div>
+                    <div style="margin: 10px 0;"></div><a href="/signout">登出系統</a> 
+                
+                </form>
+                <div class="formTopic">新增留言</div>
+                <form action="/createMessage" method="POST">
+                    <div class="message"><textarea name="content"></textarea></div>
+                    <button type="submit" >送出</button>
+                </form>
+                
+                
+                <div class="formTopic">查詢會員姓名</div>
+                    <input type="text" placeholder="請輸入會員帳號" name="username" id="inputUsername">&nbsp;
+                    <br><button onclick="lookup_name()">查詢</button>
+                    <div id="membername"></div><br>
+            
+             <div class="formTopic">修改會員姓名</div>
+                <input type="text" placeholder="輸入新的姓名" id="newName" name="newname">
+                <br><button onclick="update_name()">更新姓名</button>
+                <div id="updatename"></div><br>
+
+            <div class="formTopic">留言紀錄：</div>
+            <div class="allmessages">
+                {% for message in allMessage %}
+                {{ message[0] }}: {{ message[1] }}<br>
+                {% endfor %}
+            </div>
+        </div>
+    <script src="W7.js"></script>
+    </body>
+   
+</html>
